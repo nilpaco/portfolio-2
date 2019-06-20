@@ -1,4 +1,4 @@
-import { LitElement, html } from "@polymer/lit-element";
+import { LitElement, html } from '@polymer/lit-element';
 
 class Properties extends LitElement {
   // Properties are defined through a static getter. When defined, LitElement will reflect any
@@ -34,10 +34,10 @@ class Properties extends LitElement {
 
   reverseMessage(message) {
     return message
-      .split("")
+      .split('')
       .reverse()
-      .join("");
+      .join('');
   }
 }
 
-customElements.define("x-properties", Properties);
+customElements.define('x-properties', Properties);
