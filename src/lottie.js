@@ -4,10 +4,7 @@ import { LitElement, html } from '@polymer/lit-element/';
 
 class Lottie extends LitElement {
   static get properties() {
-    return {
-      greeting: { type: String },
-      animation: { type: String }
-    };
+    return {};
   }
 
   constructor() {
@@ -27,10 +24,6 @@ class Lottie extends LitElement {
         progressiveLoad: true
       }
     });
-    this.animation.addEventListener('complete', () => {
-      console.log('asdf');
-      // this.animation.destroy();
-    });
   }
 
   play() {
@@ -38,9 +31,40 @@ class Lottie extends LitElement {
   }
 
   render() {
-    const { greeting } = this;
     return html`
-      <button id="lottie" @click=${this.play}>Click me ❤</button>
+      <style>
+        button {
+          border: none;
+          margin: 0;
+          padding: 0;
+          width: auto;
+          overflow: visible;
+
+          background: transparent;
+
+          /* inherit font & color from ancestor */
+          color: inherit;
+          font: inherit;
+
+          line-height: normal;
+
+          /* Corrects font smoothing for webkit */
+          -webkit-font-smoothing: inherit;
+          -moz-osx-font-smoothing: inherit;
+
+          -webkit-appearance: none;
+
+          cursor: pointer;
+          outline: none;
+        }
+
+        /* Remove excess padding and border in Firefox 4+ */
+        &::-moz-focus-inner {
+          border: 0;
+          padding: 0;
+        }
+      </style>
+      <button id="lottie" @click=${this.play}></button>
     `;
   }
 }
